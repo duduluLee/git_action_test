@@ -41,5 +41,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.ACCESS_TOKEN }}  # 將 ACCESS_TOKEN 替換為你的個人存取權杖
+        deploy_key: ${{ secrets.TOKEN }}  # 將 ACCESS_TOKEN 替換為你的個人存取權杖
         publish_dir: ./site
