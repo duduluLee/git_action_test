@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "git-action-test"
+version = "0.1.0"
+description = ""
+authors = ["Noah <noahlee@smarter.com.tw>"]
+readme = "README.md"
+packages = [{include = "git_action_test"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^8.1.1"
+mkdocs-material = "^9.5.18"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
