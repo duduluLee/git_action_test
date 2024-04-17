@@ -14,11 +14,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Configure Git Credentials
-      run: |
-        git config user.name github-actions[bot]
-        git config user.email github-actions[bot]@users.noreply.github.com
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -35,7 +30,9 @@ jobs:
     - name: Run tests
       run: poetry run pytest tests
 
-    - name: Deploy to GitHub Pages
-      run: poetry run mkdocs gh-deploy --force
+
+    - name: Deploy docs
+      uses: mhausenblas/mkdocs-deploy-gh-pages@master
       env:
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        CONFIG_FILE: mkdocs.yml
